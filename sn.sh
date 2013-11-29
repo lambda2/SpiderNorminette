@@ -33,6 +33,8 @@ check "parenthesis around return value"
 ft_grep "return " | grep -v "return ("
 check "spacing around any = operator"
 ft_grep "=" | grep -v " = \| == \| != \| -= \| += \| *= \| /= \| >= \| <= "
+check "lines with more than 80 characters"
+ft_grep "^.{81,}$"
 
 category "FUNCTIONS"
 check "number of parameters shouldn't exceed 4"
