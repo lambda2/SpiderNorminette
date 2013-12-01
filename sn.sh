@@ -6,7 +6,7 @@ echo "\n\033[38;5;167m  Thanks for using SpiderNorminette v0.11\033[0m"
 
 # /!\ PUT THE PATH OF THE REPERTORY YOU WANT TO CHECK HERE! /!\
 # The script tests all files present in the given repertory.
-DIR="../Rendu/libft/*.c"
+DIR=$1
 
 function		ft_grep {
 grep -n "$1" $DIR | grep -v ":[\*][\*]\|/[\*]"
