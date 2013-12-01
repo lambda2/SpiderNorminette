@@ -7,9 +7,13 @@ echo "\n\033[38;5;167m  Thanks for using SpiderNorminette v0.11\033[0m"
 # /!\ PUT THE PATH OF THE REPERTORY YOU WANT TO CHECK HERE! /!\
 # The script tests all files present in the given repertory.
 DIR="../Rendu/libft/*.c"
+if [ $# -gt 0 ]
+then
+	DIR="$1/*.c"
+fi
 
 function		ft_grep {
-grep -n "$1" $DIR | grep -v ":[\*][\*]\|/[\*]"
+grep -n "$1" $DIR | grep -v ":[\*][\*]\|/[\*]" | grep -v "Binary file"
 }
 function		category {
 	echo "\033[38;5;36m\n  $1:\033[0m"
